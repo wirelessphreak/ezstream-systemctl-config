@@ -1,0 +1,13 @@
+[Unit]
+Description=source client for Icecast with external de-/encoder support
+Requires=icecast2.service
+After=icecast2.service
+
+[Service]
+User=(user to execute eztream)
+ExecStart=/usr/bin/ezstream -c (/path/to/ezstream/config.xml)
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=icecast2.service
